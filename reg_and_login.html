@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация и Вход</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .switch-text {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #666;
+        }
+        .switch-text a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .switch-text a:hover {
+            text-decoration: underline;
+        }
+        .alert {
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .alert-error {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+        .alert-success {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container" id="formContainer">
+        <!-- Форма входа -->
+        <div id="loginFormContainer">
+            <h2>Вход</h2>
+            <form id="loginForm">
+                <input type="email" id="loginEmail" placeholder="Введите email" required>
+                <input type="password" id="loginPassword" placeholder="Введите пароль" required>
+                <button type="submit">Войти</button>
+            </form>
+            <div id="loginMessage" class="alert"></div>
+            <div class="switch-text">
+                Нет аккаунта? <a href="#" id="switchToRegister">Зарегистрироваться</a>
+            </div>
+        </div>
+
+        <!-- Форма регистрации -->
+        <div id="registerFormContainer" style="display: none;">
+            <h2>Регистрация</h2>
+            <form id="registrationForm">
+                <input type="email" id="registerEmail" placeholder="Введите email" required>
+                <input type="password" id="registerPassword" placeholder="Введите пароль" required>
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+            <div id="registerMessage" class="alert"></div>
+            <div class="switch-text">
+                Уже есть аккаунт? <a href="#" id="switchToLogin">Войти</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Переключение между формами
+        document.getElementById('switchToRegister').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('loginFormContainer').style.display = 'none';
+            document.getElementById('registerFormContainer').style.display = 'block';
+        });
+
+        document.getElementById('switchToLogin').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('registerFormContainer').style.display = 'none';
+            document.getElementById('loginFormContainer').style.display = 'block';
+        });
+
+        // Функция для проверки email
+        function validateEmail(email) {
+            const regex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+            return regex.test(email);
+        }
+
+        // Обработка регистрации
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('registerEmail').value;
+            const password = document.getElementById('registerPassword').value;
+            const message = document.getElementById('registerMessage');
+
+            // Проверка email
+            if (!validateEmail(email)) {
+                message.textContent = 'Ошибка: Некорректный email';
+                message.className = 'alert alert-error';
+                return;
+            }
+
+            // Получаем данные из localStorage
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+
+            // Проверка, существует ли пользователь с таким email
+            const userExists = users.some(user => user.email === email);
+            if (userExists) {
+                message.textContent = 'Ошибка: Пользователь с таким email уже зарегистрирован';
+                message.className = 'alert alert-error';
+                return;
+            }
+
+            // Сохраняем нового пользователя
+            users.push({ email, password });
+            localStorage.setItem('users', JSON.stringify(users));
+
+            // Сообщение об успешной регистрации
+            message.textContent = 'Регистрация успешна!';
+            message.className = 'alert alert-success';
+
+            // Очистка формы
+            document.getElementById('registrationForm').reset();
+
+            // Перенаправление на форму входа через 2 секунды
+            setTimeout(() => {
+                document.getElementById('registerFormContainer').style.display = 'none';
+                document.getElementById('loginFormContainer').style.display = 'block';
+            }, 2000);
+        });
+
+        // Обработка входа
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            const message = document.getElementById('loginMessage');
+
+            // Получаем данные из localStorage
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+
+            // Проверяем, существует ли пользователь с таким email и паролем
+            const user = users.find(user => user.email === email && user.password === password);
+            if (user) {
+                message.textContent = 'Вход выполнен успешно!';
+                message.className = 'alert alert-success';
+            } else {
+                message.textContent = 'Ошибка: Неверный email или пароль';
+                message.className = 'alert alert-error';
+            }
+        });
+    </script>
+</body>
+</html>

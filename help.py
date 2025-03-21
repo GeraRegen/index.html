@@ -78,7 +78,7 @@ html_content = """
 
         if (!user) {
             // Если пользователь не зарегистрирован, перенаправляем на страницу регистрации
-            window.location.href = 'reg.html';
+            window.location.href = 'reg_and_login.html';
         }
     </script>
 </body>
