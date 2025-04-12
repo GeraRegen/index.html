@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    line-height: 1.6;
+    color: #333;
+}
+
+header {
+    width: 100%;
+}
+
+.cloud-glava {
+    width: 100%;
+    background-image: url('oblako.jpg');
+    background-size: cover;
+    border-radius: 0 0 20px 20px;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.cloud-glava h1 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin-bottom: 15px;
+}
+
+nav {
+    background-color: #333;
+    padding: 15px 10px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #555;
+    text-decoration: none;
+}
+
+.projects-container {
+    max-width: 1200px;
+    margin: 0 auto 30px;
+    padding: 0 20px;
+}
+
+.projects-switcher {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.project-tab {
+    padding: 10px 20px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 600;
+    text-align: center;
+}
+
+.project-tab.active {
+    background-color: #62e242;
+    color: white;
+}
+
+.project-card {
+    background-color: rgb(45, 207, 66);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    margin-bottom: 20px;
+    display: none;
+}
+
+.project-card.active {
+    display: block;
+    background-color: rgb(45, 207, 66);
+}
+
+.project-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+    text-align: center;
+}
+
+.project-description {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin: 15px auto;
+    display: block;
+    border-radius: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+footer img {
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+pre {
+    white-space: pre-wrap;
+    font-family: Arial, sans-serif;
+    margin: 15px auto;
+    max-width: 800px;
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    line-height: 1.5;
+}
+
+.content {
+    background: #222222;
+    color: #ffd500;
+    width: 800px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px #ffd500b4;
+}
+
+.content h2 {
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    font-family: 'Bahnschrift SemiBold SemiCondensed', Arial, sans-serif;
+}
+
+.more-text {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.read-more-btn {
+    color: #64f321;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+    text-decoration: underline;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media (max-width: 600px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    nav a {
+        margin: 5px 0;
+    }
+    
+    .content {
+        width: 95%;
+    }
+}

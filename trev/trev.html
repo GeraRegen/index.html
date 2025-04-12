@@ -1,1 +1,165 @@
 
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="trev.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Тревога</title>
+</head>
+<body>
+    <header>
+        <div class="cloud-glava">
+            <h1>Психологическая помощь ВЫХОД ЕСТЬ!</h1>
+            <img src="page_psih2.png" alt="Логотип компании">
+        </div>
+    </header>
+    
+    <nav>
+        <a href="Главка/index.html">Главная</a>
+        <a href="help/help.html">Консультация</a>       
+    </nav>
+    
+    <div class="projects-container">
+        <div class="projects-switcher">
+            <div class="project-tab active" data-tab="villa">Симптомы </div>
+            <div class="project-tab" data-tab="cottage">Как нарастает тревога?</div>
+            <div class="project-tab" data-tab="mansion">Лечение</div>
+        </div>
+        
+        <div class="project-card active" id="villa-tab">
+            <div class="project-image"></div>
+            <div class="project-content">
+                <h2 class="project-title">Симптомы тревоги:</h2>
+                <p class="project-description">
+                    <ul>
+                        <li>Неконтролируемое беспокойство.</li>
+                        <li>Дискомфорт в животе.</li>
+                        <li>Мышечное напряжение.</li>
+                        <li>Дрожь в теле.</li>
+                        <li>Невозможность расслабиться.</li>
+                        <li>Головная боль, головокружение.</li>
+                        <li>Трудности концентрации внимания.</li>
+                        <li>Чрезмерная нервозность, волнение.</li>
+                        <li>Ускоренное сердцебиение, учащенное дыхание.</li>
+                        <li>Проблемы со сном.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+        
+        <div class="project-card" id="cottage-tab" style="display: none;">
+            <div class="project-image" style="background-image: url('https://via.placeholder.com/1200x600/cccccc/969696')"></div>
+            <div class="project-content">
+                <h2 class="project-title">Как нарастает тревога?</h2>
+                <p class="project-description">
+                    Тревога или страх заставляют человека избегать тех ситуаций или предметов, которые вызывают страх. 
+                    В результате избегания на какое-то время наступает кратковременное облегчение, но следующая встреча 
+                    с объектом тревоги может быть гораздо более пугающей. Таким образом может образоваться порочный 
+                    круг избегания и усиления тревоги.
+                </p>
+                
+            </div>
+        </div>
+        
+        <div class="project-card" id="mansion-tab" style="display: none;">
+            <div class="project-image" style="background-image: url('https://via.placeholder.com/1200x600/999999/666666')"></div>
+            <div class="project-content">
+                <h2 class="project-title">Как лечатся тревожные расстройства?</h2>
+                <p class="project-description">
+                    <strong>Психотерапия.</strong> Например, может использоваться когнитивно-поведенческая терапия. 
+                    Во время сессий выявляются и прорабатываются искажения мышления, провоцирующие тревогу. Также 
+                    эффективен метод экспозиции, при котором психотерапевт и пациент создают план по постепенному 
+                    противостоянию тревожащим ситуациям и таким образом разрывают порочный круг тревоги. При таком 
+                    активном противостоянии страхи теряют свою силу.
+                </p>
+
+                <p class="project-description">
+                    <strong>Медикаментозная помощь</strong> (по назначению врача могут использоваться такие лекарственные 
+                    средства, как антидепрессанты и др.).
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <h2>САМОПОМОЩЬ ПРИ ТРЕВОГЕ</h2>
+        <p>
+            Техники "заземления" позволяют взять эмоции под контроль, оказать скорую помощь при тревоге, сильном страхе. 
+            Используя "заземление", человек, испытывающий волнение, беспокойство, может вернуться от тягостных мыслей, 
+            нахлынувших чувств в ситуацию "здесь и сейчас". Удерживая свое внимание на реальном объекте.
+
+            <div class="more-text" style="display: none;">
+                Существует множество техник заземления, использовать их можно практически в любых ситуациях и местах:
+                <ul>
+                    <li>Посмотрите вокруг себя. Назовите (можно про себя) пять вещей, которые Вы видите, четыре, которые Вы можете потрогать, три, которые Вы слышите, две, которые можете понюхать и одну, которую Вы можете почувствовать на вкус.</li>
+                    <li>Держите при себе небольшой предмет, чтобы в ситуации стресса Вы могли взять его в руки. Это может быть что-то вроде гладкого камня, отполированного кусочка стекла или украшения; это может быть маленькая статуэтка или что-то, что связано у Вас с хорошими воспоминаниями. Носите этот объект с собой там, где его легко хранить, и доставайте, когда тревога, беспокойство захлестывают Вас. Обращайте внимание и описывайте в уме каждую деталь объекта, дотрагиваясь до него рукой и отмечая все ощущения от этого касания (текстура, размер, вес, температура и др.).</li>
+                    <li>Буквально "заземлитесь". Если Вы стоите или сидите, отметьте, как ваши стопы стоят на полу, почувствуйте в прямом смысле почву под ногами и силу земного притяжения. Вы можете встать, снять обувь и наступать каждой ногой на землю или на пол, ощущая, как будто Ваши ноги — это основание добротного здания, крепко связанного с землей.</li>
+                    <li>Выйдите на улицу или посмотрите в окно, найдите любой объект, например дерево, растение. Отметьте как можно больше деталей этого объекта. Например, отметьте, как на дерево падает свет и куда отбрасывается тень. Рассмотрите, какие у него ветви, есть ли на них почки или листья, какой они формы, цвета.</li>
+                </ul>
+            </div>
+            
+        </p>
+        <span class="read-more-btn" onclick="toggleReadMore()">Ещё...</span>
+    </div>
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.project-tab');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Удаляем активный класс у всех вкладок
+                    tabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Добавляем активный класс текущей вкладке
+                    this.classList.add('active');
+                    
+                    // Скрываем все карточки
+                    document.querySelectorAll('.project-card').forEach(card => {
+                        card.style.display = 'none';
+                    });
+                    
+                    // Показываем только выбранную карточку
+                    const tabId = this.getAttribute('data-tab');
+                    document.getElementById(`${tabId}-tab`).style.display = 'block';
+                });
+            });
+        });
+    </script>
+
+    <script>
+        function toggleReadMore() {
+            var moreText = document.querySelector('.more-text');
+            var btnText = document.querySelector('.read-more-btn');
+            
+            if (moreText.style.display === 'none' || !moreText.style.display) {
+                moreText.style.display = 'inline';
+                btnText.textContent = 'Уменшить';
+            } else {
+                moreText.style.display = 'none';
+                btnText.textContent = 'Ещё...';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelector('.more-text').style.display = 'none';
+        });
+    </script>
+
+    <footer>
+        <img src="page_psih2.png" alt="Логотип компании">
+        <pre>
+ООО «Медико-диагностический центр «Выход Есть!» - это многопрофильное лечебно-профилактическое учреждение, которое имеет современную материально-техническую базу,
+оказывает платные медицинские услуги и осуществляет консультации высококвалифицированных специалистов.
+        </pre>
+        <pre>
+Обращаем ваше внимание на то, что данный интернет-сайт носит исключительно информационный характер и ни при каких условиях не является публичной офертой,
+определяемой положениями ст. 405 Гражданского кодекса Республики Беларусь.
+Для получения подробной информации о наличии и стоимости указанных услуг, пожалуйста, обращайтесь к администраторам клиники.
+        </pre>
+    </footer>
+</body>
+</html>
