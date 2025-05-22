@@ -1,14 +1,15 @@
+
 body, h1, h2, p, nav, ul, li, button {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-weight: 400; /* Обычный вес шрифта */
-    font-size: 18px; /* Увеличенный размер шрифта для основного текста */
+    font-weight: 400;
+    font-size: 18px;
 }
 
 body {
     font-family: "Roboto", sans-serif;
-    line-height: 1.8; /* Увеличенный интерлиньяр для упрощения чтения */
+    line-height: 1.8;
 }
 
 header {
@@ -642,12 +643,246 @@ main {
 
 /* Адаптация для мобильных */
 @media (max-width: 768px) {
+    /* Общие настройки для текста */
+    body {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    
+    /* Шапка */
+    header {
+        height: auto;
+        padding: 15px 10px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    header h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+    
+    header h3 {
+        text-align: center;
+        font-size: 20px;
+        margin-top: 10px;
+    }
+    
+    .number {
+        text-align: center;
+        margin: 10px 0;
+    }
+    
+    /* Навигация */
+    nav {
+        flex-direction: column;
+        padding: 15px 10px;
+        gap: 15px;
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+    
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+        padding: 8px 0;
+    }
+    
+    .sub-menu {
+        position: static;
+        width: 100%;
+        margin-top: 5px;
+        background-color: rgba(0,0,0,0.2);
+    }
+    
+    .glow-button {
+        width: 90%;
+        margin: 10px auto;
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+    
+    /* Основной контент */
+    .inf-drug {
+        padding: 20px 15px;
+    }
+    
+    .inf-drug h1 {
+        font-size: 24px;
+        padding: 10px 0;
+    }
+    
+    .inf-drug p {
+        font-size: 16px;
+    }
+    
+    /* Слайдер */
+    .fullscreen-slider {
+        height: 400px;
+        margin: 20px 0;
+    }
+    
+    .slide {
+        padding: 0 15px;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .slide h2 {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+    
+    .slide p {
+        font-size: 16px;
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .slider-nav {
+        bottom: 20px;
+    }
+    
+    .slider-arrow {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .slider-arrow.prev {
+        left: 10px;
+    }
+    
+    .slider-arrow.next {
+        right: 10px;
+    }
+    
+    /* Блок с фотографиями */
+    .vaper-w {
+        padding: 20px 15px;
+        margin-top: 0;
+    }
+    
+    .vaper-w h1 {
+        font-size: 24px;
+    }
+    
+    .vaper-w p {
+        font-size: 16px;
+        width: 100%;
+        padding: 10px 0;
+    }
+    
+    .photos {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .photos img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Раскрывающиеся блоки */
+    .inf-conteier {
+        padding: 20px 0;
+    }
+    
+    .expandable-block {
+        width: 90%;
+        margin-bottom: 25px;
+    }
+    
+    .content-block {
+        padding: 20px;
+        padding-bottom: 70px;
+    }
+    
+    .content-block h1 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    
+    .content-block p {
+        font-size: 16px;
+    }
+    
+    .expand-btn {
+        right: 20px;
+        bottom: 15px;
+    }
+    
+    .button-inf {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+    
+    /* Футер */
+    .site-footer {
+        padding: 30px 0 15px;
+    }
+    
+    .footer-mission h3 {
+        font-size: 24px;
+    }
+    
     .footer-content {
         flex-direction: column;
-        gap: 20px;
+        gap: 25px;
     }
     
     .footer-section {
         min-width: 100%;
+    }
+    
+    .footer-section h4 {
+        font-size: 18px;
+    }
+    
+    .footer-bottom {
+        padding-top: 15px;
+    }
+}
+
+/* Дополнительные адаптации для очень маленьких экранов */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 24px;
+    }
+    
+    header h3 {
+        font-size: 18px;
+    }
+    
+    .fullscreen-slider {
+        height: 350px;
+    }
+    
+    .slide h2 {
+        font-size: 20px;
+    }
+    
+    .slide p {
+        font-size: 15px;
+    }
+    
+    .inf-drug h1, 
+    .vaper-w h1 {
+        font-size: 22px;
+    }
+    
+    .expandable-block {
+        width: 95%;
+    }
+    
+    .content-block h1 {
+        font-size: 18px;
     }
 }
