@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>Технические индикаторы для криптовалют</h1>
+    {% for ticker in tickers %}
+        <h2>{{ ticker }}</h2>
+        <div class="chart-container">
+            <h3>Дневной график</h3>
+            <a href="{{ url_for('static', filename=f'{ticker}_1d_plot.html') }}">EMA 20</a> |
+            <a href="{{ url_for('static', filename=f'{ticker}_1d_macd_plot.html') }}">MACD</a>
+        </div>
+        <div class="chart-container">
+            <h3>Недельный график</h3>
+            <a href="{{ url_for('static', filename=f'{ticker}_1wk_plot.html') }}">EMA 20</a> |
+            <a href="{{ url_for('static', filename=f'{ticker}_1wk_macd_plot.html') }}">MACD</a>
+        </div>
+        <div class="chart-container">
+            <h3>Часовой график</h3>
+            <a href="{{ url_for('static', filename=f'{ticker}_1h_plot.html') }}">EMA 20</a> |
+            <a href="{{ url_for('static', filename=f'{ticker}_1h_macd_plot.html') }}">MACD</a>
+        </div>
+        <div class="chart-container">
+            <h3>4-часовой график</h3>
+            <a href="{{ url_for('static', filename=f'{ticker}_4h_plot.html') }}">EMA 20</a> |
+            <a href="{{ url_for('static', filename=f'{ticker}_4h_macd_plot.html') }}">MACD</a>
+        </div>
+    {% endfor %}
+{% endblock %}
